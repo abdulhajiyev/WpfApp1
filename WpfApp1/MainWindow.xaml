@@ -12,7 +12,7 @@
     MinHeight="200"
     WindowState="Normal"
     >
-    <Grid ShowGridLines="False">
+    <Grid ShowGridLines="True">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
