@@ -3,16 +3,45 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    x:Class="WpfApp1.MainWindow"
+        x:Class="WpfApp1.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow"
+        Title=""
         Height="450"
         Width="800"
-    WindowStartupLocation="CenterScreen"
-    MinHeight="200"
-    WindowState="Normal"
-    >
-    <Grid ShowGridLines="True">
+        WindowStartupLocation="CenterScreen"
+        MinHeight="350"
+        MinWidth="650"
+        WindowState="Normal">
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="BtnMouseOverDisable" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+                                BorderThickness="2"
+                                Padding="{TemplateBinding Padding}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                CornerRadius="5"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="Red" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" Value="0.25" />
+                                <Setter Property="BorderBrush" Value="Transparent" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Name="BtnGrid" ShowGridLines="True">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -22,11 +51,11 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Button Content="Row0 Column0" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"></Button>
-        <Button Content="Row0 Column1" Grid.Row="0" Grid.Column="1" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"></Button>
-        <Button Content="Row0 Column2" Grid.Row="0" Grid.Column="2" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"></Button>
-        <Button Content="Row1 Column0" Grid.Row="1" Grid.Column="0" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"></Button>
-        <Button Content="Row1 Column1" Grid.Row="1" Grid.Column="1" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"></Button>
-        <Button Content="Row1 Column2" Grid.Row="1" Grid.Column="2" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"></Button>
+        <Button  PreviewMouseLeftButtonDown="Button_MouseLeftButtonDown" PreviewMouseRightButtonDown="Button_MouseRightButtonDown" Name="Btn1" Content="1" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="150" FontSize="25" Style="{StaticResource BtnMouseOverDisable}" Loaded="Btn_Load"></Button>
+        <Button  PreviewMouseLeftButtonDown="Button_MouseLeftButtonDown" PreviewMouseRightButtonDown="Button_MouseRightButtonDown" Name="Btn2" Content="2" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="150" FontSize="25" Style="{StaticResource BtnMouseOverDisable}" Loaded="Btn_Load"></Button>
+        <Button  PreviewMouseLeftButtonDown="Button_MouseLeftButtonDown" PreviewMouseRightButtonDown="Button_MouseRightButtonDown" Name="Btn3" Content="3" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="150" FontSize="25" Style="{StaticResource BtnMouseOverDisable}" Loaded="Btn_Load"></Button>
+        <Button  PreviewMouseLeftButtonDown="Button_MouseLeftButtonDown" PreviewMouseRightButtonDown="Button_MouseRightButtonDown" Name="Btn4" Content="4" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="150" FontSize="25" Style="{StaticResource BtnMouseOverDisable}" Loaded="Btn_Load"></Button>
+        <Button PreviewMouseLeftButtonDown="Button_MouseLeftButtonDown" PreviewMouseRightButtonDown="Button_MouseRightButtonDown" Name="Btn5" Content="5" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="150" FontSize="25" Style="{StaticResource BtnMouseOverDisable}" Loaded="Btn_Load"></Button>
+        <Button PreviewMouseLeftButtonDown="Button_MouseLeftButtonDown" PreviewMouseRightButtonDown="Button_MouseRightButtonDown"  Name="Btn6" Content="6" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="150" FontSize="25" Style="{StaticResource BtnMouseOverDisable}" Loaded="Btn_Load"></Button>
     </Grid>
 </Window>
