@@ -28,7 +28,7 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="BorderBrush" Value="Red" />
+                                <Setter Property="BorderBrush" Value="LightGray" />
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Opacity" Value="0.25" />
@@ -41,7 +41,7 @@
         </Style>
     </Window.Resources>
 
-    <Grid Name="BtnGrid" ShowGridLines="True">
+    <Grid Name="BtnGrid" ShowGridLines="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -51,11 +51,11 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Button  PreviewMouseLeftButtonDown="Button_MouseLeftButtonDown" PreviewMouseRightButtonDown="Button_MouseRightButtonDown" Name="Btn1" Content="1" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="150" FontSize="25" Style="{StaticResource BtnMouseOverDisable}" Loaded="Btn_Load"></Button>
-        <Button  PreviewMouseLeftButtonDown="Button_MouseLeftButtonDown" PreviewMouseRightButtonDown="Button_MouseRightButtonDown" Name="Btn2" Content="2" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="150" FontSize="25" Style="{StaticResource BtnMouseOverDisable}" Loaded="Btn_Load"></Button>
-        <Button  PreviewMouseLeftButtonDown="Button_MouseLeftButtonDown" PreviewMouseRightButtonDown="Button_MouseRightButtonDown" Name="Btn3" Content="3" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="150" FontSize="25" Style="{StaticResource BtnMouseOverDisable}" Loaded="Btn_Load"></Button>
-        <Button  PreviewMouseLeftButtonDown="Button_MouseLeftButtonDown" PreviewMouseRightButtonDown="Button_MouseRightButtonDown" Name="Btn4" Content="4" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="150" FontSize="25" Style="{StaticResource BtnMouseOverDisable}" Loaded="Btn_Load"></Button>
-        <Button PreviewMouseLeftButtonDown="Button_MouseLeftButtonDown" PreviewMouseRightButtonDown="Button_MouseRightButtonDown" Name="Btn5" Content="5" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="150" FontSize="25" Style="{StaticResource BtnMouseOverDisable}" Loaded="Btn_Load"></Button>
-        <Button PreviewMouseLeftButtonDown="Button_MouseLeftButtonDown" PreviewMouseRightButtonDown="Button_MouseRightButtonDown"  Name="Btn6" Content="6" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="150" FontSize="25" Style="{StaticResource BtnMouseOverDisable}" Loaded="Btn_Load"></Button>
+        <Button PreviewMouseLeftButtonDown="Button_MouseLeftButtonDown" PreviewMouseRightButtonDown="Button_MouseRightButtonDown" Name="Btn1" Content="1" Grid.Row="0" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="15" FontSize="25" Style="{StaticResource BtnMouseOverDisable}" Loaded="Btn_Load"></Button>
+        <Button PreviewMouseLeftButtonDown="Button_MouseLeftButtonDown" PreviewMouseRightButtonDown="Button_MouseRightButtonDown" Name="Btn2" Content="2" Grid.Row="0" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="15" FontSize="25" Style="{StaticResource BtnMouseOverDisable}" Loaded="Btn_Load"></Button>
+        <Button PreviewMouseLeftButtonDown="Button_MouseLeftButtonDown" PreviewMouseRightButtonDown="Button_MouseRightButtonDown" Name="Btn3" Content="3" Grid.Row="0" Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="15" FontSize="25" Style="{StaticResource BtnMouseOverDisable}" Loaded="Btn_Load"></Button>
+        <Button PreviewMouseLeftButtonDown="Button_MouseLeftButtonDown" PreviewMouseRightButtonDown="Button_MouseRightButtonDown" Name="Btn4" Content="4" Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="15" FontSize="25" Style="{StaticResource BtnMouseOverDisable}" Loaded="Btn_Load"></Button>
+        <Button PreviewMouseLeftButtonDown="Button_MouseLeftButtonDown" PreviewMouseRightButtonDown="Button_MouseRightButtonDown" Name="Btn5" Content="5" Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="15" FontSize="25" Style="{StaticResource BtnMouseOverDisable}" Loaded="Btn_Load"></Button>
+        <Button PreviewMouseLeftButtonDown="Button_MouseLeftButtonDown" PreviewMouseRightButtonDown="Button_MouseRightButtonDown"  Name="Btn6" Content="6" Grid.Row="1" Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="15" FontSize="25" Style="{StaticResource BtnMouseOverDisable}" Loaded="Btn_Load"></Button>
     </Grid>
 </Window>
